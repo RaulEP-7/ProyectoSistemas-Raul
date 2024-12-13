@@ -29,7 +29,6 @@ Este proxecto permite a integración de datos en tempo real e a súa manipulaci�
 
 Para comezar, clona este repositorio utilizando o seguinte comando:
 
-```bash
 git clone git@github.com:RaulEP-7/ProyectoSistemas-Raul.git
 cd ProyectoSistemas-Raul
 
