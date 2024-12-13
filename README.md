@@ -28,10 +28,10 @@ Este proxecto permite a integración de datos en tempo real e a súa manipulaci�
 ### Clonar o Repositorio
 
 Para comezar, clona este repositorio utilizando o seguinte comando:
-
+```bash
 git clone git@github.com:RaulEP-7/ProyectoSistemas-Raul.git
 cd ProyectoSistemas-Raul
-
+```
 ## 🚀 Script 1: Conexión á API e Almacenamento en MongoDB
 
 ### 🛠 Funcionalidade
