@@ -3,15 +3,15 @@
 ## Índice
 
 1. [Descripción](#descripción)
-2. [Script 1: Conexión á API e Almacenamento en MongoDB](#script-1-conexión-á-api-e-almacenamento-en-mongodb)
+2. [Instalación](#instalación)
+3. [Script 1: Conexión á API e Almacenamento en MongoDB](#script-1-conexión-á-api-e-almacenamento-en-mongodb)
    - [Funcionalidade](#funcionalidade)
-   - [Requisitos](#requisitos)
-   - [Instalación](#instalación)
-3. [Script 2: Lectura de MongoDB e Exportación a Pandas](#script-2-lectura-de-mongodb-e-exportación-a-pandas)
+   - [Librerías necesarias](#librerías-necesarias)
+4. [Script 2: Lectura de MongoDB e Exportación a Pandas](#script-2-lectura-de-mongodb-e-exportación-a-pandas)
    - [Funcionalidade](#funcionalidade-1)
-   - [Requisitos](#requisitos-1)
-   - [Instalación](#instalación-1)
-4. [Configuración](#configuración)
+   - [Librerías necesarias](#librerías-necesarias-1)
+5. [Configuración](#configuración)
+6. [Licenza](#licenza)
 
 ---
 
@@ -22,6 +22,16 @@ Este repositorio contén dous scripts que interactúan cunha API pública e Mong
 Este proxecto permite a integración de datos en tempo real e a súa manipulación mediante pandas para análise ou exportación.
 
 ---
+
+## 🔧 Instalación
+
+### Clonar o Repositorio
+
+Para comezar, clona este repositorio utilizando o seguinte comando:
+
+```bash
+git clone 
+cd <directorio-do-repositorio>
 
 ## 🚀 Script 1: Conexión á API e Almacenamento en MongoDB
 
@@ -42,16 +52,11 @@ Este proxecto permite a integración de datos en tempo real e a súa manipulaci�
   
 ### 🔧 Instalación
 
-1. Clona este repositorio:
-    ```bash
-    git clone git@github.com:RaulEP-7/ProyectoSistemas-Raul.git
-    cd /ProyectoSistemas-Raul
-    ```
-2. Instala as dependencias necesarias:
+1. Instala as dependencias necesarias:
     ```bash
     pip install requests pymongo
     ```
-3. Executa o script:
+2. Executa o script:
     ```bash
     python script_1.py
     ```
@@ -79,16 +84,11 @@ Este proxecto permite a integración de datos en tempo real e a súa manipulaci�
   
 ### 🔧 Instalación
 
-1. Clona este repositorio:
-    ```bash
-    git clone <url-do-repositorio>
-    cd <directorio-do-repositorio>
-    ```
-2. Instala as dependencias necesarias:
+1. Instala as dependencias necesarias:
     ```bash
     pip install pandas pymongo
     ```
-3. Executa o script:
+2. Executa o script:
     ```bash
     python script_2.py
     ```
