@@ -10,8 +10,6 @@
 4. [Script 2: Lectura de MongoDB e Exportación a Pandas](#script-2-lectura-de-mongodb-e-exportación-a-pandas)
    - [Funcionalidade](#funcionalidade-1)
    - [Librerías necesarias](#librerías-necesarias-1)
-5. [Configuración](#configuración)
-6. [Licenza](#licenza)
 
 ---
 
@@ -30,8 +28,8 @@ Este proxecto permite a integración de datos en tempo real e a súa manipulaci�
 Para comezar, clona este repositorio utilizando o seguinte comando:
 
 ```bash
-git clone 
-cd <directorio-do-repositorio>
+git clone git@github.com:RaulEP-7/ProyectoSistemas-Raul.git
+cd /ProyectoSistemas-Raul
 
 ## 🚀 Script 1: Conexión á API e Almacenamento en MongoDB
 
