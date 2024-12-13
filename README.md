@@ -12,7 +12,6 @@
    - [Requisitos](#requisitos-1)
    - [Instalación](#instalación-1)
 4. [Configuración](#configuración)
-5. [Licenza](#licenza)
 
 ---
 
