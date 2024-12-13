@@ -6,10 +6,12 @@
 2. [Instalación](#instalación)
 3. [Script 1: Conexión á API e Almacenamento en MongoDB](#script-1-conexión-á-api-e-almacenamento-en-mongodb)
    - [Funcionalidade](#funcionalidade)
-   - [Librerías necesarias](#librerías-necesarias)
+   - [Requisitos](#requisitos)
+   - [Instalación](#instalación-1)
 4. [Script 2: Lectura de MongoDB e Exportación a Pandas](#script-2-lectura-de-mongodb-e-exportación-a-pandas)
    - [Funcionalidade](#funcionalidade-1)
-   - [Librerías necesarias](#librerías-necesarias-1)
+   - [Requisitos](#requisitos-1)
+   - [Instalación](#instalación-2)
 
 ---
 
@@ -29,7 +31,7 @@ Para comezar, clona este repositorio utilizando o seguinte comando:
 
 ```bash
 git clone git@github.com:RaulEP-7/ProyectoSistemas-Raul.git
-cd /ProyectoSistemas-Raul
+cd ProyectoSistemas-Raul
 
 ## 🚀 Script 1: Conexión á API e Almacenamento en MongoDB
 
