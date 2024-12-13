@@ -1,69 +1,98 @@
-# ProyectoSistemas-Raul
+# 🚲 Proyecto API y MongoDB - Bicicorunha
 
-## Descripción
+## Índice
 
-Este repositorio contiene dos scripts que interactúan con unha API e MongoDB. O primeiro script conecta á API a intervalos regulares para obter e almacenar os datos nunha base de datos MongoDB. O segundo script recupera os datos almacenados e os exporta a un dataframe de pandas, exportando os datos en formatos CSV e Parquet.
+1. [Descripción](#descripción)
+2. [Script 1: Conexión á API e Almacenamento en MongoDB](#script-1-conexión-á-api-e-almacenamento-en-mongodb)
+   - [Funcionalidade](#funcionalidade)
+   - [Requisitos](#requisitos)
+   - [Instalación](#instalación)
+3. [Script 2: Lectura de MongoDB e Exportación a Pandas](#script-2-lectura-de-mongodb-e-exportación-a-pandas)
+   - [Funcionalidade](#funcionalidade-1)
+   - [Requisitos](#requisitos-1)
+   - [Instalación](#instalación-1)
+4. [Configuración](#configuración)
+5. [Licenza](#licenza)
 
 ---
 
-## Script 1: Conexión á API e Almacenamento en MongoDB
+## 📝 Descripción
 
-### Descripción
+Este repositorio contén dous scripts que interactúan cunha API pública e MongoDB. O primeiro script conecta á API de CityBike e almacena os datos de estacións de bicicletas en MongoDB a intervalos regulares. O segundo script consulta a base de datos de MongoDB, recupera os datos almacenados, crea un DataFrame de pandas e exporta os datos en formatos CSV e Parquet.
 
-Este script realiza unha conexión á API a intervalos regulares (configurables, por exemplo, cada X minutos) e obtén datos para almacenalos nunha base de datos MongoDB. A execución do script non para ata que se cancele manualmente.
+Este proxecto permite a integración de datos en tempo real e a súa manipulación mediante pandas para análise ou exportación.
 
-### Funcionalidade
+---
 
-- Conéctase á API a intervalos regulares (e.g., cada 10 segundos).
+## 🚀 Script 1: Conexión á API e Almacenamento en MongoDB
+
+### 🛠 Funcionalidade
+
+- Conéctase á API de CityBike a intervalos regulares (cada 10 segundos).
 - Obtén os datos de resposta da API.
 - Almacena os datos na base de datos MongoDB.
-- A execución do script continuará sen interrupción ata que se cancele manualmente.
+- A execución do script continúa ata que se cancele manualmente (funciona en modo infinito).
 
-### Código do Script
+### 🧩 Requisitos
 
-```python
-import requests
-from pymongo import MongoClient
-import time
+- Python 3.x
+- MongoDB
+- Librerías necesarias:
+  - `requests`
+  - `pymongo`
+  
+### 🔧 Instalación
 
-# Configuración
-endpoint = 'https://api.citybik.es/v2/networks/bicicorunha'  # URL da API de CityBike para obter datos de estacións
-mongo_uri = "mongodb+srv://Rep-7:changame@cluster0.m9dpb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"  # URI de conexión a MongoDB
-db_name = "bicicoruna"  # Nome da base de datos de MongoDB
-collection_name = "stations"  # Nome da colección onde se almacenarán as estacións
+1. Clona este repositorio:
+    ```bash
+    git clone <url-do-repositorio>
+    cd <directorio-do-repositorio>
+    ```
+2. Instala as dependencias necesarias:
+    ```bash
+    pip install requests pymongo
+    ```
+3. Executa o script:
+    ```bash
+    python script_1.py
+    ```
 
-# Conexión a MongoDB
-client = MongoClient(mongo_uri)  # Establecer a conexión coa base de datos MongoDB
-db = client[db_name]  # Acceder á base de datos específica
-collection = db[collection_name]  # Acceder á colección específica
+---
 
-# Función para solicitar y almacenar los datos
-def fetch_and_store_data():
-    response = requests.get(endpoint)  # Solicitar datos á API
+## 🐍 Script 2: Lectura de MongoDB e Exportación a Pandas
 
-    if response.status_code == 200:  # Se a resposta é correcta
-        data = response.json()  # Obter os datos en formato JSON
-        stations = data['network']['stations']  # Obter a lista de estacións
+### 🛠 Funcionalidade
 
-        # Engadir unha marca de tempo a todas as estacións
-        for station in stations:
-            station["timestamp"] = time.time()
+- Lé os datos almacenados na base de datos MongoDB.
+- Filtra os documentos para exportar só os campos necesarios: `id`, `name`, `timestamp`, `free_bikes`, `empty_slots`, `uid`, `last_updated`, `slots`, `normal_bikes` e `ebikes`.
+- Almacena os datos nun DataFrame de pandas.
+- Exporta os datos a dous formatos:
+  - **CSV**
+  - **Parquet**
 
-        # Insertar ou actualizar todos os datos na colección MongoDB
-        collection.insert_many(stations, ordered=False)
+### 🧩 Requisitos
 
-        print(f"Datos de {len(stations)} estacións almacenados con éxito en MongoDB.")
-    else:
-        print(f"Erro ao conectar á API: {response.status_code}")  # Mostrar erro en caso de falla na conexión
+- Python 3.x
+- MongoDB
+- Librerías necesarias:
+  - `pandas`
+  - `pymongo`
+  
+### 🔧 Instalación
 
-# Executar de maneira continua
-try:
-    while True:
-        fetch_and_store_data()  # Solicitar y almacenar los datos
-        time.sleep(10)  # Esperar 10 segundos antes de solicitar os datos novamente
-except KeyboardInterrupt:
-    print("Ejecución detenida manualmente.")  # Mensaxe ao interromper a execución manualmente
+1. Clona este repositorio:
+    ```bash
+    git clone <url-do-repositorio>
+    cd <directorio-do-repositorio>
+    ```
+2. Instala as dependencias necesarias:
+    ```bash
+    pip install pandas pymongo
+    ```
+3. Executa o script:
+    ```bash
+    python script_2.py
+    ```
 
-# Cerrar conexión a MongoDB
-client.close()
-print("Conexión a MongoDB pechada.")
+---
+
