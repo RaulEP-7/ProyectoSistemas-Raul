@@ -94,13 +94,13 @@ cd ProyectoSistemas-Raul
 
 ---
 
-# 🚀 Dockerizar Script Python 🐍
+## 🚀 Dockerizar Script Python 🐍
 
 Este proxecto encapsula un script de Python (`script1.py`) dentro dun contedor Docker 🐳 para facilitar a súa execución en calquera sistema. Inclúe a instalación automática das dependencias necesarias (`requests` e `pymongo`).
 
 ---
 
-## 🔧 Requisitos Previos
+### 🔧 Requisitos Previos
 Asegúrate de ter instalado no teu sistema:
 - 🐍 Python 3.12 (opcional, só para probar localmente)
 - 🐳 Docker (versión máis recente)
@@ -110,3 +110,4 @@ Asegúrate de ter instalado no teu sistema:
  ```bash
  docker build -t imagen
  ```
+
