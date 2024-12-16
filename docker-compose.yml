@@ -1,0 +1,6 @@
+version: '3.8'
+
+services:
+  script:
+    image: rep17/imagen:latest
+    container_name: Script
