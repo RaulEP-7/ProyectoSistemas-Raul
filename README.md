@@ -12,7 +12,9 @@
    - [Funcionalidade](#funcionalidade-1)
    - [Requisitos](#requisitos-1)
    - [Instalación](#instalación-2)
-
+5. [Dockerizar Script Python]
+   - [Requisitos](#requisitos-2)
+   - [Instalación](#-instalación-3) 
 ---
 
 ## 📝 Descripción
@@ -98,14 +100,20 @@ cd ProyectoSistemas-Raul
 
 Este proxecto encapsula un script de Python (`script1.py`) dentro dun contedor Docker 🐳 para facilitar a súa execución en calquera sistema. Inclúe a instalación automática das dependencias necesarias (`requests` e `pymongo`).
 
-### 🔧 Requisitos Previos
+### 🔧 Requisitos
 Asegúrate de ter instalado no teu sistema:
 - 🐍 Python 3.12 (opcional, só para probar localmente)
 - 🐳 Docker (versión máis recente)
 
 ### 🔧 Instalación
-1. Creamos a imaxe co archivo Dockerfile
- ```bash
- docker build -t imagen
- ```
-
+1. Creamos o archivo de dockerización da seguinte forma
+  ```bash
+   FROM python:3.12-slim
+   RUN pip install --no-cache-dir requests pymongo
+   COPY script1.py /
+   CMD ["python", "./script1.py"]
+  ```
+2. Creamos a imaxe
+  ```bash
+   docker build -t imagen .
+  ```
