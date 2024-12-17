@@ -38,7 +38,7 @@ cd ProyectoSistemas-Raul
 
 ### 🛠 Funcionalidade
 
-- Conéctase á API de CityBike a intervalos regulares (cada 10 segundos).
+- Conéctase á API de CityBike a intervalos regulares (cada 5 minutos).
 - Obtén os datos de resposta da API.
 - Almacena os datos na base de datos MongoDB.
 - A execución do script continúa ata que se cancele manualmente (funciona en modo infinito).
